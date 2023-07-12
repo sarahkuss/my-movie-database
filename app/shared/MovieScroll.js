@@ -1,5 +1,13 @@
 import MovieCard from "./MovieCard"
 
+export async function generateStaticParams() {
+  return [
+    { genre: 'drama', number: 6 },
+    { genre: 'comedy', number: 6 },
+    { genre: 'horror', number: 6 },
+  ]
+}
+
 async function getData(genre) {
   const res = await fetch(`https://api.sampleapis.com/movies/${genre}`)
   return res.json()
